@@ -10,10 +10,10 @@
 int main(void)
 {
 	char i;
-
+	
 	i = 'a';
 	putchar(i);
-	while (i <= 'z')
+	while (i <= 'z' && i != 'a')
 	{
 		putchar(i);
 		i++;
