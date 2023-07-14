@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - Entry point
+ * main -  entry point
  * Return - Always (Success)
  */
 
@@ -17,5 +17,5 @@ int main(void)
 		i--;
 	}
 	putchar('\n');
-	return(0);
+	return (0);
 }
