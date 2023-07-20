@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  * Description: divisble by 3 fizz 5, buzz both Fizzbuzz
- * Return: Always 1 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
@@ -34,5 +34,5 @@ int main(void)
 		}
 	}
 	printf("\n");
-	return (1);
+	return (0);
 }
