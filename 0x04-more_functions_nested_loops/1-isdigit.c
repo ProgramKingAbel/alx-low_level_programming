@@ -6,7 +6,7 @@
  * Return: 1 if truthy 0 if falsy
  */
 
-int _isidigt(int c)
+int _isdigit(int c)
 {
 	if (c >= 48 && c < 57)
 	{
