@@ -1,20 +1,32 @@
 #include "main.h"
 
 /**
- * _strncat - Entry point for concatenation
+ * _strcat - Entry point for concatenation
  * @dest: initial string
  * @src: latter string to append
- * @n: no of bytes
  * Return: Pointer to final string
  */
 
-char *_strncat(char *dest, char *src, int n)
+char *_strcat(char *dest, char *src)
 {
-	int i = 0, len = 0;
+	int i;
+	int j;
 
-	while (dest[i++])
-		len++;
-	for (i = 0; src[i] && i < n; i++)
-		dest[len++] = src[i];
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+
+	dest[i] = '\0';
 	return (dest);
 }
+
+
