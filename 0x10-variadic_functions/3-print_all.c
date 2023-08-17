@@ -6,40 +6,48 @@
  * print_all - Entry point, prints anything and everything
  *
  * @format: arg types
- * Return: nothing
+ * Return: Nothing
  */
 
 void print_all(const char * const format, ...)
 {
-	va_list list;
+	int a = 0;
+	char *string, *separator = "";
 
-	va_start(list, format);
+	va_list items;
 
-	for (int i = 0; format[i]; i++)
+	va_start(items, format);
+
+	if (format)
 	{
-		switch (format[i])
+		while (format[a])
 		{
-			case 'c':
-				printf("%c", va_arg(list, int));
-				break;
-			case 'i':
-				printf("%d", va_arg(list, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(list, double));
-				break;
-			case 's':
-				const char *str = va_arg(list, const char *);
-
-				printf("%s", (str ? str : "(nil)"));
-				break;
-			default:
-				continue;
+			switch (format[a])
+			{
+				case 'c':
+					printf("%s%c", separator, va_arg(items, int));
+					break;
+				case 'i':
+					printf("%s%d", separator, va_arg(items, int));
+					break;
+				case 'f':
+					printf("%s%f", separator, va_arg(items, double));
+					break;
+				case 's':
+					string = va_arg(items, char *);
+					if (!string)
+						string = "(nil)";
+					printf("%s%s", separator, string);
+					break;
+				default:
+					a++;
+					continue;
+			}
+			separator = ", ";
+			a++;
 		}
-		if (format[i + 1])
-			printf(", ");
 	}
 
 	printf("\n");
-	va_end(list);
+	va_end(items);
 }
